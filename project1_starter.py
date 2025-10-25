@@ -1,11 +1,13 @@
 """
 COMP 163 - Project 1: Character Creator & Saving/Loading
-Name: [Your Name Here]
-Date: [Date]
+Name: Abraheem Ashe
+Date: 10-24-2025
 
 AI Usage: [Document any AI assistance used]
 Example: AI helped with file I/O error handling logic in save_character function
 """
+import math
+
 
 def create_character(name, character_class):
     """
@@ -16,6 +18,8 @@ def create_character(name, character_class):
     char = create_character("Aria", "Mage")
     # Should return: {"name": "Aria", "class": "Mage", "level": 1, "strength": 5, "magic": 15, "health": 80, "gold": 100}
     """
+    
+        
     # TODO: Implement this function
     # Remember to use calculate_stats() function for stat calculation
     pass
@@ -31,6 +35,31 @@ def calculate_stats(character_class, level):
     - Rogues: Medium strength, medium magic, low health
     - Clerics: Medium strength, high magic, high health
     """
+    if character_class == "Warrior":
+        strength = 10 + (level * 2)
+        magic = 2 + (level * .5)
+        health = 100 + (level * 5)
+        return (math.ceil(strength), math.ceil(magic), math.ceil(health))
+    elif character_class == "Mage":
+        strength = 4 + (level * 1)
+        magic = 10 + (level * 2)
+        health = 80 + (level * 2)
+        return (math.ceil(strength), math.ceil(magic), math.ceil(health))
+    elif character_class == "Rogue":
+        strength = 7 + (level * 1.3)
+        magic = 5 + (level * 1)
+        health = 70 + (level * 3)
+        return (math.ceil(strength), math.ceil(magic), math.ceil(health))
+    elif character_class == "Cleric":
+        strength = 6 + (level * .5)
+        magic = 8 + (level * 2)
+        health = 90 + (level * 4)
+        return (math.ceil(strength), math.ceil(magic), math.ceil(health))
+        
+        
+        
+        
+        
     # TODO: Implement this function
     # Return a tuple: (strength, magic, health)
     pass
