@@ -18,8 +18,7 @@ def create_character(name, character_class):
     char = create_character("Aria", "Mage")
     # Should return: {"name": "Aria", "class": "Mage", "level": 1, "strength": 5, "magic": 15, "health": 80, "gold": 100}
     """
-    name = input("Enter your character's name: ")
-    character_class = input("Enter your character's class (Warrior, Mage, Rogue, Cleric)")
+    
     
     player_info = {
         "name": name, 
@@ -150,7 +149,7 @@ if __name__ == "__main__":
     print("Test your functions here!")
     
     # Example usage:
-    # char = create_character("TestHero", "Warrior")
+    # char = create_character("Abraheem", "Warrior")
     # display_character(char)
     # save_character(char, "my_character.txt")
     # loaded = load_character("my_character.txt")
