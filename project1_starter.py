@@ -18,7 +18,21 @@ def create_character(name, character_class):
     char = create_character("Aria", "Mage")
     # Should return: {"name": "Aria", "class": "Mage", "level": 1, "strength": 5, "magic": 15, "health": 80, "gold": 100}
     """
+    player_info = {
+        "name": name, 
+        "class": character_class, 
+        "level": 1,
+        "Gold": 100
+        }
     
+    str_mag_hlth = calculate_stats(character_class, player_info['level'])
+    
+    player_info.update({
+        'strength': str_mag_hlth[0],
+        'magic': str_mag_hlth[1],
+        'health': str_mag_hlth[2],
+    })
+    return player_info
         
     # TODO: Implement this function
     # Remember to use calculate_stats() function for stat calculation
