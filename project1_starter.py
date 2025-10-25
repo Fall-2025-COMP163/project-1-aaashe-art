@@ -24,7 +24,6 @@ def create_character(name, character_class):
         "name": name, 
         "class": character_class, 
         "level": 1,
-        "gold": 100
         }
     
     str_mag_hlth = calculate_stats(character_class, player_info['level'])
@@ -34,7 +33,7 @@ def create_character(name, character_class):
         'magic': str_mag_hlth[1],
         'health': str_mag_hlth[2],
     })
-    
+    player_info['gold'] = 100
     print(player_info)
     #(f"name: {player_info['name']}, Class: {player_info['class']}, Level: {player_info['level']}, Strength: {player_info['strength']}, Magic: {player_info['magic']}, Health: {player_info['health']}, gold: {player_info['gold']}")
     return player_info
