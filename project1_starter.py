@@ -18,6 +18,9 @@ def create_character(name, character_class):
     char = create_character("Aria", "Mage")
     # Should return: {"name": "Aria", "class": "Mage", "level": 1, "strength": 5, "magic": 15, "health": 80, "gold": 100}
     """
+    name = input("Enter your character's name: ")
+    character_class = input("Enter your character's class (Warrior, Mage, Rogue, Cleric)")
+    
     player_info = {
         "name": name, 
         "class": character_class, 
@@ -75,8 +78,7 @@ def calculate_stats(character_class, level):
         magic = 8 + (level * 2)
         health = 90 + (level * 4)
         return (math.ceil(strength), math.ceil(magic), math.ceil(health))
-#char = create_character(input('Enter name'), input('Choose a class: Warrior, Mage, Rogue, Cleric'))
-    
+
 
         
         
