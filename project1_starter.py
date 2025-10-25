@@ -22,7 +22,7 @@ def create_character(name, character_class):
         "name": name, 
         "class": character_class, 
         "level": 1,
-        "Gold": 100
+        "gold": 100
         }
     
     str_mag_hlth = calculate_stats(character_class, player_info['level'])
@@ -32,7 +32,13 @@ def create_character(name, character_class):
         'magic': str_mag_hlth[1],
         'health': str_mag_hlth[2],
     })
+    
+    print(f"name: {player_info['name']}, Class: {player_info['class']}, Level: {player_info['level']}, Strength: {player_info['strength']}, Magic: {player_info['magic']}, Health: {player_info['health']}, gold: {player_info['gold']}")
     return player_info
+
+
+
+
         
     # TODO: Implement this function
     # Remember to use calculate_stats() function for stat calculation
@@ -69,6 +75,9 @@ def calculate_stats(character_class, level):
         magic = 8 + (level * 2)
         health = 90 + (level * 4)
         return (math.ceil(strength), math.ceil(magic), math.ceil(health))
+#char = create_character(input('Enter name'), input('Choose a class: Warrior, Mage, Rogue, Cleric'))
+    
+
         
         
         
