@@ -113,7 +113,7 @@ def load_character(filename):
     """
     # TODO: Implement this function
     # Remember to handle file not found errors
-    pass
+     #pass
 
 def display_character(character):
     """
@@ -141,7 +141,7 @@ def level_up(character):
     """
     # TODO: Implement this function
     # Remember to recalculate stats for the new level
-    pass
+    #pass
 
 # Main program area (optional - for testing your functions)
 if __name__ == "__main__":
