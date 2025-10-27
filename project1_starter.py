@@ -42,7 +42,7 @@ def create_character(name, character_class):
 
 
         
-    # TODO: Implement this function
+    #TDO: Implement this function
     # Remember to use calculate_stats() function for stat calculation
     #pass
 
@@ -84,7 +84,7 @@ def calculate_stats(character_class, level):
         
         
         
-    # TODO: Implement this function
+    # : Implement this function
     # Return a tuple: (strength, magic, health)
     #pass
 
@@ -102,16 +102,16 @@ def save_character(character, filename):
     Health: [health]
     Gold: [gold]
     """
-    # TODO: Implement this function
+    # : Implement this function
     # Remember to handle file errors gracefully
-    pass
+    #pass
 
 def load_character(filename):
     """
     Loads character from text file
     Returns: character dictionary if successful, None if file not found
     """
-    # TODO: Implement this function
+    # : Implement this function
     # Remember to handle file not found errors
      #pass
 
@@ -130,8 +130,8 @@ def display_character(character):
     Health: 80
     Gold: 100
     """
-    # TODO: Implement this function
-    pass
+    # : Implement this function
+    #pass
 
 def level_up(character):
     """
@@ -139,7 +139,7 @@ def level_up(character):
     Modifies the character dictionary directly
     Returns: None
     """
-    # TODO: Implement this function
+    # : Implement this function
     # Remember to recalculate stats for the new level
     #pass
 
