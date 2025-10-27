@@ -104,7 +104,7 @@ def save_character(character, filename):
     """
     # : Implement this function
     # Remember to handle file errors gracefully
-    #pass
+    pass
 
 def load_character(filename):
     """
@@ -113,7 +113,7 @@ def load_character(filename):
     """
     # : Implement this function
     # Remember to handle file not found errors
-     #pass
+    pass
 
 def display_character(character):
     """
@@ -131,7 +131,7 @@ def display_character(character):
     Gold: 100
     """
     # : Implement this function
-    #pass
+    pass
 
 def level_up(character):
     """
@@ -141,7 +141,7 @@ def level_up(character):
     """
     # : Implement this function
     # Remember to recalculate stats for the new level
-    #pass
+    pass
 
 # Main program area (optional - for testing your functions)
 if __name__ == "__main__":
