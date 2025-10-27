@@ -44,7 +44,7 @@ def create_character(name, character_class):
         
     # TODO: Implement this function
     # Remember to use calculate_stats() function for stat calculation
-    pass
+    #pass
 
 def calculate_stats(character_class, level):
     """
@@ -86,7 +86,7 @@ def calculate_stats(character_class, level):
         
     # TODO: Implement this function
     # Return a tuple: (strength, magic, health)
-    pass
+    #pass
 
 def save_character(character, filename):
     """
@@ -149,7 +149,7 @@ if __name__ == "__main__":
     print("Test your functions here!")
     
     # Example usage:
-    # char = create_character("Abraheem", "Warrior")
+    char = create_character("Abraheem", "Cleric")
     # display_character(char)
     # save_character(char, "my_character.txt")
     # loaded = load_character("my_character.txt")
