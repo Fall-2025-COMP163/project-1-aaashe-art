@@ -7,6 +7,7 @@ AI Usage: [Document any AI assistance used]
 Example: AI helped with file I/O error handling logic in save_character function
 """
 import math
+import os
 
 
 def create_character(name, character_class):
@@ -37,9 +38,6 @@ def create_character(name, character_class):
     print(player_info)
     #(f"name: {player_info['name']}, Class: {player_info['class']}, Level: {player_info['level']}, Strength: {player_info['strength']}, Magic: {player_info['magic']}, Health: {player_info['health']}, gold: {player_info['gold']}")
     return player_info
-
-
-
 
         
     #TDO: Implement this function
@@ -80,13 +78,7 @@ def calculate_stats(character_class, level):
     else:
         print('Error')
         return (0,0,0)
-
-
-        
-        
-        
-        
-        
+     
     # : Implement this function
     # Return a tuple: (strength, magic, health)
     #pass
@@ -105,6 +97,26 @@ def save_character(character, filename):
     Health: [health]
     Gold: [gold]
     """
+    
+    required_info = ['name', 'class', 'level', 'strength', 'magic', 'health', 'gold']
+
+# Check that all required fields exist in the dictionary
+    for info in required_info:
+        if info not in character:
+            print('Error')
+        return False
+
+    
+    with open (filename, 'w') as file:
+        file.write(f"Character Name: {character['name']}\n")
+        file.write(f"Class: {character['class']}\n")
+        file.write(f"Level: {character['level']}\n")
+        file.write(f"Strength: {character['strength']}\n")
+        file.write(f"Magic: {character['magic']}\n")
+        file.write(f"Health: {character['health']}\n")
+        file.write(f"Gold: {character['gold']}\n")
+    return True
+    
     # : Implement this function
     # Remember to handle file errors gracefully
     pass
