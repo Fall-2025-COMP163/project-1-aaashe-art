@@ -76,9 +76,10 @@ def calculate_stats(character_class, level):
         strength = 6 + (level * .5)
         magic = 8 + (level * 2)
         health = 90 + (level * 4)
+        return (math.ceil(strength), math.ceil(magic), math.ceil(health))
     else:
         print('Error')
-        return (math.ceil(strength), math.ceil(magic), math.ceil(health))
+        return (0,0,0)
 
 
         
