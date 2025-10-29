@@ -119,7 +119,7 @@ def save_character(character, filename):
     
     # : Implement this function
     # Remember to handle file errors gracefully
-    pass
+    #pass
 
 def load_character(filename):
     """
@@ -156,7 +156,7 @@ def load_character(filename):
     return character
     # : Implement this function
     # Remember to handle file not found errors
-    pass
+    #pass
 
 def display_character(character):
     """
@@ -173,8 +173,16 @@ def display_character(character):
     Health: 80
     Gold: 100
     """
+    print(f'=== CHARACTER SHEET ===')
+    print(f"Name: {character['name']}")
+    print(f"Class: {character['class']}")
+    print(f"Level: {character['level']}")
+    print(f"Strength: {character['strength']}")
+    print(f"Magic: {character['magic']}")
+    print(f"Health: {character['health']}")
+    print(f"Gold: {character['gold']}")
     # : Implement this function
-    pass
+    #pass
 
 def level_up(character):
     """
@@ -182,6 +190,14 @@ def level_up(character):
     Modifies the character dictionary directly
     Returns: None
     """
+    if 'level' in character:
+        character['level'] += 1
+        str_mag_hlth = calculate_stats(character['class'], character['level'])
+        character['strength'] = str_mag_hlth[0]
+        character['magic'] = str_mag_hlth[1]
+        character['health'] = str_mag_hlth[2]
+        
+    
     # : Implement this function
     # Remember to recalculate stats for the new level
     pass
@@ -193,6 +209,6 @@ if __name__ == "__main__":
     
     # Example usage:
     char = create_character("Abraheem", "Cleric")
-    # display_character(char)
-    # save_character(char, "my_character.txt")
-    # loaded = load_character("my_character.txt")
+    display_character(char)
+    save_character(char, "my_character.txt")
+    loaded = load_character("my_character.txt")

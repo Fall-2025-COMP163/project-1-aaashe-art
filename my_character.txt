@@ -1,0 +1,7 @@
+Character Name: Abraheem
+Class: Cleric
+Level: 1
+Strength: 7
+Magic: 10
+Health: 94
+Gold: 100
