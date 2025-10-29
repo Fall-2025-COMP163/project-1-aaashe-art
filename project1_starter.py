@@ -104,7 +104,7 @@ def save_character(character, filename):
     for info in required_info:
         if info not in character:
             print('Error')
-        return False
+            return False
 
     
     with open (filename, 'w') as file:
@@ -126,6 +126,34 @@ def load_character(filename):
     Loads character from text file
     Returns: character dictionary if successful, None if file not found
     """
+    
+    if not os.path.exists(filename):
+        return None
+    
+    character = {}
+    with open (filename, 'r') as file:
+        lines = file.readlines()
+        
+    for line in lines:
+        line = line.strip()
+        parts = line.split(':')
+        key_part = parts[0].strip()
+        value_part = parts[1].strip()
+        if key_part ==  'Character Name':
+            character['name'] = value_part
+        elif key_part == 'Class':
+            character['class'] = value_part
+        elif key_part == 'Level':
+            character['level'] = int(value_part)
+        elif key_part == 'Strength':
+            character['strength'] = int(value_part)
+        elif key_part == 'Magic':
+            character['magic'] = int(value_part)
+        elif key_part == 'Health':
+            character['health'] = int(value_part)
+        elif key_part == 'Gold':
+            character['gold'] = int(value_part)
+    return character
     # : Implement this function
     # Remember to handle file not found errors
     pass
