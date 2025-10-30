@@ -105,7 +105,13 @@ def save_character(character, filename):
         if info not in character:
             print('Error')
             return False
-
+        
+    directory = ''
+    if '/' in filename or '\\' in filename:
+        path = filename.replace('\\', '/')
+        directory = '/'.join(path.split('/')[:-1])
+    if directory and not os.path.exists(directory):
+        return False
     
     with open (filename, 'w') as file:
         file.write(f"Character Name: {character['name']}\n")
