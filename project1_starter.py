@@ -200,7 +200,7 @@ def level_up(character):
     
     # : Implement this function
     # Remember to recalculate stats for the new level
-    pass
+    #pass
 
 # Main program area (optional - for testing your functions)
 if __name__ == "__main__":
