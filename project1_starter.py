@@ -158,7 +158,7 @@ def save_character(character, filename):
         if info not in character:
             print('Error')
             return False
-        
+# Check if directory exists, if not return False/ will check .txt files and windows files(windows files use \ instead of /)        
     directory = ''
     if '/' in filename or '\\' in filename:
         path = filename.replace('\\', '/')
