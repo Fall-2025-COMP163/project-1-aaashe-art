@@ -3,7 +3,9 @@ COMP 163 - Project 1: Character Creator & Saving/Loading
 Name: Abraheem Ashe
 Date: 10-24-2025
 
-AI Usage: [Document any AI assistance used]
+AI Usage: Chatgpt was used incrementally for logic errors and formating erros when test cases didnt pass. 
+Was walked step-by-step on lines 162-167, I was very confused on how to check the dispository and needed some guiance on how to get it started.
+Whole code was not directly written for me but I used the promt(Walk me through the thinking I need to create a dipository error check without giving me the answer.)
 Example: AI helped with file I/O error handling logic in save_character function
 """
 import math
