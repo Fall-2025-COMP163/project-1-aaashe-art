@@ -9,6 +9,59 @@ Example: AI helped with file I/O error handling logic in save_character function
 import math
 import os
 
+def add_starting_gear(character):
+    """
+    Adds starting gear based on class and updates stats accordingly.
+    Stores gear as a list of dictionaries in character['gear']
+    """
+    gear = []
+
+    if character['class'] == "Warrior":
+        
+        gear.append({"item": "Long Sword", "strength": 10})
+        character['strength'] += 10
+
+        
+        armor_pieces = ["Helmet", "Chestplate", "Leggings", "Boots"]
+        for piece in armor_pieces:
+            gear.append({"item": piece, "dexterity": 3})
+        
+        character['dexterity'] = sum(piece['dexterity'] for piece in gear if 'dexterity' in piece)
+
+    elif character['class'] == "Mage":
+        
+        gear.append({"item": "Wooden Staff", "magic": 7})
+        character['magic'] += 7
+
+        
+        gear.append({"item": "Robe", "spell_skill": "Fireball"})
+        character['spell_skill'] = "Fireball"
+
+    elif character['class'] == "Rogue":
+        
+        gear.append({"item": "Dual Daggers", "strength": 5})
+        character['strength'] += 5
+
+        
+        armor_pieces = ["Helmet", "Chestplate", "Leggings", "Boots"]
+        for piece in armor_pieces:
+            gear.append({"item": piece, "speed": 3})
+        
+        character['speed'] = sum(piece['speed'] for piece in gear if 'speed' in piece)
+
+    elif character['class'] == "Cleric":
+        
+        gear.append({"item": "Small Spirit", "magic": 4, "health": 3})
+        character['magic'] += 4
+        character['health'] += 3
+
+        
+        gear.append({"item": "Robe", "spell_skill": "Healing Circle"})
+        character['spell_skill'] = "Healing Circle"
+
+    character['gear'] = gear
+    return character
+
 
 def create_character(name, character_class):
     """
@@ -186,7 +239,34 @@ def display_character(character):
     print(f"Strength: {character['strength']}")
     print(f"Magic: {character['magic']}")
     print(f"Health: {character['health']}")
-    print(f"Gold: {character['gold']}")
+    if character['class'] == "Warrior":
+        if 'dexterity' in character:
+            print(f"Dexterity: {character['dexterity']}")
+    if character['class'] == "Rogue":
+        if 'speed' in character:
+            print(f"Speed: {character['speed']}")
+
+    # Display starting gear
+    if 'gear' in character:
+        print("Starting Gear:")
+        for item in character['gear']:
+            line = f"- {item['item']}"
+            stats = []
+            if 'strength' in item:
+                stats.append(f"+{item['strength']} Strength")
+            if 'dexterity' in item:
+                stats.append(f"+{item['dexterity']} Dexterity")
+            if 'magic' in item:
+                stats.append(f"+{item['magic']} Magic")
+            if 'health' in item:
+                stats.append(f"+{item['health']} Health")
+            if 'speed' in item:
+                stats.append(f"+{item['speed']} Speed")
+            if 'spell_skill' in item:
+                stats.append(f"{item['spell_skill']}")
+            if stats:
+                line += " (" + ", ".join(stats) + ")"
+            print(line)
     # : Implement this function
     #pass
 
@@ -214,7 +294,8 @@ if __name__ == "__main__":
     print("Test your functions here!")
     
     # Example usage:
+    # Add starting gear test
     char = create_character("Abraheem", "Cleric")
+    char = add_starting_gear(char)      
     display_character(char)
     save_character(char, "my_character.txt")
-    loaded = load_character("my_character.txt")
